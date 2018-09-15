@@ -15,3 +15,6 @@ elif r == 0:
     print("There is one root: ", x)
 else:
     print("No roots, discriminant is < 0.")
+
+
+def qu
