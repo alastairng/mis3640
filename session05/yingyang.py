@@ -25,33 +25,33 @@ def circle(t, r):
     arc(t, r, 360)
 
 
-def ying(t, r):
-    t.up()
-    t.goto(0, 300)
-    t.down()
-    t.circle(50, 180)
+def Yang(t, r):
+    t.penup()
+    t.goto(0, r * 2)
+    t.pendown()
+    t.circle(r/2, 180)
 
-def yang(t, r):
-    t.circle(50, 180)
+def Yin(t, r):
+    t.circle(r/2, 180)
 
 def Upper(t, r):
-    t.up()
-    t.goto(0, 120)
-    t.down()
-    t.circle(35, 360)
+    t.penup()
+    t.goto(0, r + r/3)
+    t.pendown()
+    t.circle(r/6, 360)
 
 
 def Lower(t, r):
-    t.up()
-    t.goto(0, 30)
-    t.down()
-    t.circle(35, 360)
+    t.penup()
+    t.goto(0, r/3)
+    t.pendown()
+    t.circle(r/6, 360)
 
-circle(Jack, 100)
+circle(Jack, 50)
 
-Yin(Jack, 100)
-Yang(Jack, 100)
-Upper(Jack, 100)
-Lower(Jack, 100)
+Yin(Jack, 50)
+Yang(Jack, 50)
+Upper(Jack, 50)
+Lower(Jack, 50)
 
-
+turtle.mainloop()

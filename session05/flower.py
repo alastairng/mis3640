@@ -5,7 +5,7 @@ import math
 def flower(t,r):
     t.circle(r)
     t.up()
-    t.pos(0,100)
+    t.pos(0,r)
     t.down 
     for i in range(6):
         t.seth(360/6*i)
