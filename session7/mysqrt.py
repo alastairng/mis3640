@@ -13,9 +13,7 @@ def mysqrt(a):
     return y
  
 # for i in range(1, 10):
-#     print('The square root of', i, 'is', mysqrt(i))
- 
- 
+
 def test_square_root(n):
  
     print('{:3} {:14} {:14} {:14}'.format(
