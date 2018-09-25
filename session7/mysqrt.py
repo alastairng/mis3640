@@ -21,7 +21,7 @@ def test_square_root(n):
     print('{:3} {:14} {:14} {:14}'.format(
         '-', '---------', '------------', '----'))
     for a in range(1, n):
-        print('{:3.1f} {:<14.12g} {:<14.12g} {:<14.12g}'.format(a, mysqrt(a),math.sqrt(a), abs(mysqrt(a) - math.sqrt(a))))
+        print('{:3.1f} {:14.12g} {:<14.12g} {:<14.12g}'.format(a, mysqrt(a),math.sqrt(a), abs(mysqrt(a) - math.sqrt(a))))
  
  
 test_square_root(10)
