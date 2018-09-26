@@ -4,11 +4,11 @@
 # """
 
 
-# def is_special(n):
-#     """
-#     If the number, n, is divisible by 4 (for example, 2020), return True. Return False if n is divisible by 100 (for example, 300); the only exception is when n is divisible by 400(for example, 2400), return True.
-#     """
-#     return n % 4 == 0 or n % 400 == 0 and n % 100 != 0
+def is_special(n):
+    """
+    If the number, n, is divisible by 4 (for example, 2020), return True. Return False if n is divisible by 100 (for example, 300); the only exception is when n is divisible by 400(for example, 2400), return True.
+    """
+    return n % 4 == 0 or n % 400 == 0 and n % 100 != 0
         
     
 
@@ -16,10 +16,10 @@
 # # following lines and run this file to test!
 
 
-# print(is_special(2020))
-# print(is_special(300))
-# print(is_special(2018))
-# print(is_special(2000))
+print(is_special(2020))
+print(is_special(300))
+print(is_special(2018))
+print(is_special(2000))
 
 
 """
@@ -52,7 +52,7 @@ Write a function with loops that computes the sum of all cubes of all the odd nu
 
 def sum_cubes_of_odd_numbers(n):
     result = 0
-    for x in range(n-n+1, n + 1, 3):
+    for x in range(n-n+1, n + 1, 2):
         result += x * x * x
     return result
 
