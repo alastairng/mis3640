@@ -1,73 +1,73 @@
-fin = open("session9/words.txt")
-    # line = fin.readline()
-    # word = line.strip()
-    # print(word)
+# fin = open("session9/words.txt")
+#     # line = fin.readline()
+#     # word = line.strip()
+#     # print(word)
 
-# counter = 0
-# for line in fin:
+# # counter = 0
+# # for line in fin:
+# #         word = line.strip()
+# #         counter += 1
+# # print(counter)
+
+# def read_long_words():
+#     """
+#     prints only the words with more than 20 characters
+#     """
+#     for line in fin:
 #         word = line.strip()
-#         counter += 1
-# print(counter)
-
-def read_long_words():
-    """
-    prints only the words with more than 20 characters
-    """
-    for line in fin:
-        word = line.strip()
-        if len(word) > 20:
-            print(word)
+#         if len(word) > 20:
+#             print(word)
 
 
 
-read_long_words()
+# read_long_words()
 
 
-def has_no_e(word):
-    """
-    returns True if the given word doesn’t have the letter “e” in it.
-    """
-    for letter in word:
-        # if letter=="e":
-        if letter.lower() == 'e':
-            return False
-    return True
+# def has_no_e(word):
+#     """
+#     returns True if the given word doesn’t have the letter “e” in it.
+#     """
+#     for letter in word:
+#         # if letter=="e":
+#         if letter.lower() == 'e':
+#             return False
+#     return True
 
-# return not 'e' in word.lower()
-
-
-print(has_no_e('Babson'))
-print(has_no_e('College'))
+# # return not 'e' in word.lower()
 
 
-def avoids(word, forbidden):
-    """
-    takes a word and a string of forbidden letters, and that returns True
-    if the word doesn’t use any of the forbidden letters.
-    """
-    for letter in word:
-        if letter in forbidden:
-            return False
-    return True
+# print(has_no_e('Babson'))
+# print(has_no_e('College'))
 
 
-print(avoids('Babson', 'ab'))
-print(avoids('College', 'ab'))
+# def avoids(word, forbidden):
+#     """
+#     takes a word and a string of forbidden letters, and that returns True
+#     if the word doesn’t use any of the forbidden letters.
+#     """
+#     for letter in word:
+#         if letter in forbidden:
+#             return False
+#     return True
 
 
-def uses_only(word, available):
-    """
-    takes a word and a string of letters, and that returns True if the word
-    contains only letters in the list.
-    """
-    for letter in word:
-        if letter not in available:
-            return False
-    return True
+# print(avoids('Babson', 'ab'))
+# print(avoids('College', 'ab'))
+
+
+# def uses_only(word, available):
+#     """
+#     takes a word and a string of letters, and that returns True if the word
+#     contains only letters in the list.
+#     """
+#     for letter in word:
+#         if letter not in available:
+#             return False
+#     return True
  
 
-print(uses_only('Babson', 'aBbsonxyz'))
-print(uses_only('college', 'aBbsonxyz'))
+# print(uses_only('Babson', 'aBbsonxyz'))
+# print(uses_only('college', 'aBbsonxyz'))
 
 
 def uses_all(word, required):
@@ -76,26 +76,27 @@ def uses_all(word, required):
     the word uses all the required letters at least once.
     """
     for letter in required:
-        if letter in word:
-            return True
-    return False
+        if letter not in word:
+            return False
+
+    return True
 
 
-print(uses_all('Babson', 'abs'))
-print(uses_all('college', 'abs'))
+# print(uses_all('Babson', 'abs'))
+# print(uses_all('college', 'abs'))
 
 
-# def is_abecedarian(word):
-#     """
-#     returns True if the letters in a word appear in alphabetical order
-#     (double letters are ok).
-#     """
-#     before = word[0]
-#     for letter in word:
-#         if letter < before:
-#             return False
-#         before = letter
-#     return True
+def is_abecedarian(word):
+    """
+    returns True if the letters in a word appear in alphabetical order
+    (double letters are ok).
+    """
+    before = word[0]
+    for letter in word:
+        if letter < before:
+            return False
+        before = letter
+    return True
  
 # print(is_abecedarian('abs'))
 # print(is_abecedarian('college'))
@@ -111,15 +112,44 @@ print(uses_all('college', 'abs'))
 #     else:
 #         return is_abecedarian(word[0:n-1])
 
-def is_abecedarian(word):
-    x = len(word)
-    y = 0
-    while y < x-1:
-        y += 1
-        return True
-    return False
+# def is_abecedarian(word):
+#     x = len(word)
+#     y = 0
+#     while y < x-1:
+#         y += 1
+#         return True
+#     return False
 
 
-print(is_abecedarian('abs'))
-print(is_abecedarian('college'))
+# print(is_abecedarian('abs'))
+# print(is_abecedarian('college'))
+fin=open('session9/words.txt')
+
+# def find_words_using_all_vowels():
+#     counter=0
+#     for line in fin:
+#         word = line.strip()
+#         if uses_all(word, "aeiouy"):
+#             print(word)
+#             counter += 1
+#     print(counter)
+
+# find_words_using_all_vowels()
+
+def find_words_that_is_in_abecedarian_order():
+    # counter=0
+    current_longest_word = ''
+    for line in fin:
+        word = line.strip()
+        if is_abecedarian(word):
+            # print(word)
+            # counter += 1
+            if len(word)>len(current_longest_word):
+                current_longest_word = word
+                print('current longest', current_longest_word)
+
+    
+find_words_that_is_in_abecedarian_order()
+
+
 
