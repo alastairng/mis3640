@@ -11,10 +11,11 @@ def binary_search(my_list, x):
         else:
             low = mid + 1
  
- 
-test_list = [1, 2, 4, , -100, -60000, 123215145, 0, 6223]
-test_list.sort()
- 
+
+my_list = [1, 2, 4, -100, -60000, 123215145, 0, 6223]
+my_list.sort()
+
+print(binary_search(my_list, 4)) 
 
  
 
