@@ -27,9 +27,12 @@ def nested_sum(t):
     >>> nested_sum(t)
     21
     """
+    total = 0
+    for nested in t: 
+        total += sum(nested)
+    return total
 
 
-     
 
 
 def cumsum(t):
@@ -41,7 +44,12 @@ def cumsum(t):
     >>> cumsum(t)
     [1, 3, 6]
     """
-    return
+    total = 0
+    res = []
+    for x in t:
+        total += x
+        t.append(total)
+    return res
 
 
 
@@ -54,9 +62,8 @@ def middle(t):
     >>> middle(t)
     [2, 3]
     """
-    del t[0]
-    t.pop()
-    return t
+    return t[1:-1]
+    
 
 
 def chop(t):
@@ -69,10 +76,8 @@ def chop(t):
     >>> t
     [2, 3]
     """
-    copy = t.copy()
-    del copy[0]
-    copy.pop()
-    return copy
+    del t[0]
+    del t[-1]
 
 
 def is_sorted(t):
@@ -90,6 +95,8 @@ def is_sorted(t):
             return False
     return True
 
+    return t == sorted(t)
+
 
 def is_anagram(word1, word2):
     """Checks whether two words are anagrams
@@ -106,7 +113,7 @@ def is_anagram(word1, word2):
     >>> is_anagram([1, 2, 2], [2, 1, 2])
     Ture
     """
-    return word1 == word2
+    return sorted(word1) == sorted(word2)
 
 
 def has_duplicates(s):
@@ -168,3 +175,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

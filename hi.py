@@ -6,7 +6,6 @@ def replace_even(data):
     for i in range(len(data)):
         if i % 2 == 0:
              data[i] = 0
-     
  
  
 # Uncomment the following lines to test
@@ -26,14 +25,14 @@ def remove_middle(data):
         data.remove(data[len(data)//2])
         data.remove(data[len(data)//2])
     else: #odd
-        data.remove(data[(len(data)//2)])
+        data.remove(data[(len(data)//2) + 1])
+    pass
  
 # Uncomment the following lines to test
-ONE_TEN = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-remove_middle(ONE_TEN)
-print(ONE_TEN)
+# ONE_TEN = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# remove_middle(ONE_TEN)
+# print(ONE_TEN)
  
-
  
 def insert_integer(data, number):
     '''
@@ -48,13 +47,11 @@ def insert_integer(data, number):
     i=0
     while data[i] < number:
         if number > data[i]:
-            i += 1
+            i = i+1
     data.insert(i,number)
     return data
  
-
-
-
+ 
 # Uncomment the following lines to test
 data = [1, 3, 40, 75, 90, 2000, 2001, 2016]
 new_data = insert_integer(data, 2015)
@@ -81,4 +78,7 @@ def print_hist(data):
     for i in sorted(data):
         print(i + ': ' + '*' * data[i])
  
-
+ 
+ 
+letter_counts={'C': 6, 'A': 3, 'B': 10, 'Z': 8}
+print_hist(letter_counts)
